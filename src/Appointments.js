@@ -1,7 +1,7 @@
-import { collection, query, where } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { auth } from "./firebase";
+import { auth, db } from "./firebase";
 
 export default function Appointments() {
     const location = useLocation();
@@ -11,18 +11,33 @@ export default function Appointments() {
 
     useEffect(() => {
         const getDate = async () => {
-            const q = query(collection(db, 'appointments'), where('uid', '==', auth.currentUser.uid));
+            if (role === 'Student') {
+                const q = query(collection(db, 'appointments'), where('uid', '==', auth.currentUser.uid));
+
+                const stuff = await getDocs(q);
+
+                setData(stuff.docs);
+            } else {
+                const snapshot = await getDoc(doc(db, 'orgs', auth.currentUser.uid));
+
+                const q = query(collection(db, 'appointments'), where('uid', 'in', snapshot.data()['students']));
+                const results = await getDocs(q);
+                setData(results.docs);
+            }
+            
         }
+
+        getDate();
     }, []);
 
     return (
 
         <div className={`min-h-screen`} data-theme='light'>
-          <img className="animate-fadeIn w-10 h-10 mr-6" src="https://cdn-icons-png.flaticon.com/512/245/245336.png" alt="nice"/>
-                    <h1 className={`animate-fadeIn font-bold text-success text-5xl mr-20`}>EduPulse</h1>
-                    <button onClick={() => navigate('/Dashboard', {replace: true})} className={`animate-fadeIn btn btn-ghost font-normal text-gray-700 text-lg mr-7`}>Dashboard</button>
-                    <button onClick={() => navigate('/Graphs', {replace: true})} className={`animate-fadeIn btn btn-ghost font-normal text-gray-700 text-lg mr-7`}>Graphs</button>
-                    
+          
+                    <h1 className={`animate-fadeIn font-bold text-success text-center text-5xl mr-20 w-full`}>EduPulse</h1>
+                    <div className={`mx-auto w-fit flex items-center`}>
+                        <button onClick={() => navigate('/Dashboard', {replace: true})} className={`animate-fadeIn btn mt-2 font-normal text-gray-700 text-lg mr-7`}>Dashboard</button>
+                    </div>
            <div className={`p-10 w-5/6 border-2 mx-auto mt-10`}>
             <div className="overflow-x-auto">
       <center>
@@ -40,27 +55,20 @@ export default function Appointments() {
       </tr>
     </thead>
     <tbody>
-      {/* row 1 */}
-      <tr>
-        <th>Ankur</th>
-        <td>Barde</td>
-        <td>3:45</td>
-        <td>7/</td>
-      </tr>
-      {/* row 2 */}
-      <tr className="hover">
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
-      </tr>
-      {/* row 3 */}
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-      </tr>
+      {data.map((d, index) => {
+        return (
+            <tr>
+                <td></td>
+                <td>{d.data().fName}</td>
+                <td>{d.data().lName}</td>
+
+                <td>{d.data().time}</td>
+                <td>{d.data().date}</td>
+                <td>{d.data().reason}</td>
+
+            </tr>
+        )
+      })}
     </tbody>
   </table>
   </center>

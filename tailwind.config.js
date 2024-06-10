@@ -21,7 +21,6 @@ module.exports = {
         slideIn: 'slideIn 1s ease-in-out',
         fadeIn: 'fadeIn 1s ease-in-out',
         fade: 'fade 1s ease-in-out',
-        
       },
     },
   },

@@ -2460,6 +2460,10 @@ html {
   margin-top: 2.5rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -2937,179 +2941,183 @@ html {
     content: "EduPulse.";
   }
 
-  1.01% {
+  0.65% {
     content: "E";
   }
 
-  1.88% {
+  1.84% {
     content: "Ed";
   }
 
-  2.85% {
+  2.8% {
     content: "Edu";
   }
 
-  3.5% {
+  3.07% {
     content: "EduP";
   }
 
-  4.35% {
+  3.83% {
     content: "EduPu";
   }
 
-  4.7% {
+  4.96% {
     content: "EduPul";
   }
 
-  6.03% {
+  5.48% {
     content: "EduPuls";
   }
 
-  6.34% {
+  6.14% {
     content: "EduPulse";
   }
 
-  7.17%, 17.84% {
+  6.97%, 17.64% {
     content: "EduPulse.";
   }
 
-  18.99% {
+  18.21% {
+    content: "S";
+  }
+
+  18.9% {
     content: "Su";
   }
 
-  20.68% {
+  19.83% {
     content: "Sur";
   }
 
-  21.39% {
+  20.44% {
     content: "Surv";
   }
 
-  21.35% {
+  21.26% {
     content: "Surve";
   }
 
-  22.83% {
+  22.88% {
     content: "Survey";
   }
 
-  23.83% {
+  23.49% {
     content: "Surveys";
   }
 
-  23.97%, 34.64% {
+  23.91%, 34.58% {
     content: "Surveys.";
   }
 
-  35.65% {
+  35.17% {
     content: "H";
   }
 
-  36.45% {
+  36.39% {
     content: "He";
   }
 
-  36.98% {
+  36.66% {
     content: "Hea";
   }
 
-  38% {
+  37.41% {
     content: "Heal";
   }
 
-  39.13% {
+  38.27% {
     content: "Healt";
   }
 
-  39.64% {
+  39.36% {
     content: "Health";
   }
 
-  39.82%, 50.49% {
+  40.62%, 51.28% {
     content: "Health.";
   }
 
-  51.16% {
+  51.88% {
     content: "D";
   }
 
-  51.85% {
+  52.84% {
     content: "Da";
   }
 
-  53.26% {
+  53.55% {
     content: "Dat";
   }
 
-  53.77% {
+  54.24% {
     content: "Data";
   }
 
-  54.13%, 64.8% {
+  54.86%, 65.52% {
     content: "Data.";
   }
 
-  65.98% {
+  65.96% {
     content: "T";
   }
 
-  66.57% {
+  67.03% {
     content: "Tr";
   }
 
-  67.63% {
+  68.17% {
     content: "Tre";
   }
 
-  67.82% {
+  68.59% {
     content: "Tren";
   }
 
-  68.95% {
+  69.57% {
     content: "Trend";
   }
 
-  69.69% {
+  70.57% {
     content: "Trends";
   }
 
-  70.55%, 81.21% {
+  70.97%, 81.63% {
     content: "Trends.";
   }
 
-  82.33% {
+  82.27% {
     content: "E";
   }
 
-  82.37% {
+  82.75% {
     content: "Ed";
   }
 
-  83.12% {
+  84.36% {
     content: "Edu";
   }
 
-  84.81% {
+  85.27% {
     content: "EduP";
   }
 
-  85.36% {
+  85.82% {
     content: "EduPu";
   }
 
-  86.05% {
+  86.38% {
     content: "EduPul";
   }
 
-  87.17% {
+  87.01% {
     content: "EduPuls";
   }
 
-  87.84% {
+  88.08% {
     content: "EduPulse";
   }
 
-  88.07%, 98.74% {
+  88.64%, 99.31% {
     content: "EduPulse.";
   }
 }
